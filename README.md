@@ -41,7 +41,6 @@ Once PostgreSQL is installed and running, open the PostgreSQL command line tool:
 psql -U postgres
 ```
 
-
 Create the database for the insurance agency:
 
 ```bash
@@ -66,8 +65,19 @@ To test the database, you can populate it with sample data. Open the data.sql fi
 psql -U postgres -d insurance_agency -f insert.sql
 ```
 
+6️⃣ Apply Alterations to the Schema
 
-6️⃣ Add Additional Modifications
+After inserting data into the tables, you might need to apply additional modifications, such as altering table structures or adding new fields. To do this, open the alter.sql file, which contains SQL queries for modifying existing tables.
+
+Run the SQL script to apply the alterations:
+
+```bash
+psql -U postgres -d insurance_agency -f alter.sql
+```
+
+This will update the schema by adding or modifying columns, constraints, or indexes as needed.
+
+7️⃣ Add Additional Modifications
 
 After creating the core tables and schema, you can add additional database objects that are necessary for the application. These might include custom views, stored procedures, or triggers.
 
@@ -79,8 +89,7 @@ To apply the modifications from additional.sql, run the following:
 psql -U postgres -d insurance_agency -f additional.sql
 ```
 
-
-7️⃣ Test the Database
+8️⃣ Test the Database
 
 After setting up the database and adding sample data, you can test the connection by querying the database. For example, to view all policies, run:
 
@@ -88,9 +97,21 @@ After setting up the database and adding sample data, you can test the connectio
 SELECT * FROM polisa;
 ```
 
-8️⃣ Remove Data from the Database (Optional)
+9️⃣ Remove Data from the Database (Optional)
 
 If you need to remove data from the database (but not drop the entire database), you can use the delete.sql file. This file contains SQL queries that will delete data from specific tables, such as agents, policies, and other records, without removing the structure of the tables.
+
+If you've applied additional modifications using the additional.sql file in step 7️⃣ (e.g., added custom views, indexes, or other database objects), you should first remove those modifications before deleting data.
+
+To remove the modifications, run the delete_additional.sql script, which contains SQL queries to drop any views, indexes, or other objects added during the modification step.
+
+To execute this, run the following command:
+
+```bash
+psql -U postgres -d insurance_agency -f delete_additional.sql
+```
+
+This will remove any additional database objects created in step 7️⃣.
 
 To execute the deletion run the SQL script to delete data from the relevant tables (without dropping the tables themselves):
 
@@ -102,10 +123,10 @@ This will delete all the data from the specified tables but leave the tables and
 
 Important:
 Ensure that you have backed up any important data before running the delete script, as this operation cannot be undone.  
-If you want to completely remove the tables and the database, you can follow the "Remove the Database" steps mentioned in step 9 below.
+If you want to completely remove the tables and the database, you can follow the "Remove the Database" steps mentioned in step 10 below.
 
 
-9️⃣ Remove the Database (Optional)
+🔟 Remove the Database (Optional)
 
 If you ever need to delete the insurance_agency database entirely (including all tables and data), follow these steps. Be careful, as this will permanently remove the database and all its data.
 
