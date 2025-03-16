@@ -1,0 +1,13 @@
+ALTER table agent add CONSTRAINT fk_id_adres FOREIGN KEY (id_adres) REFERENCES adres(id_adres);
+ALTER table klient add CONSTRAINT fk_id_adres FOREIGN KEY (id_adres) REFERENCES adres(id_adres);
+ALTER table oferta_polisy add CONSTRAINT fk_id_agent FOREIGN KEY (id_agent) REFERENCES agent(id_agent);
+ALTER table wykluczenia_oferty add CONSTRAINT fk_id_wykluczenia FOREIGN KEY (id_wykluczenia) REFERENCES wykluczenia(id_wykluczenia) ON DELETE CASCADE;
+ALTER table wykluczenia_oferty add CONSTRAINT fk_id_oferta   FOREIGN KEY (id_oferta) REFERENCES oferta_polisy(id_oferta_polisy) ON DELETE CASCADE;
+ALTER table zakres_pokrycia_oferty add CONSTRAINT fk_id_zakres_pokrycia FOREIGN KEY (id_zakres_pokrycia) REFERENCES zakres_pokrycia(id_zakres_pokrycia) ON DELETE CASCADE;
+ALTER table zakres_pokrycia_oferty add CONSTRAINT fk_id_oferta   FOREIGN KEY (id_oferta) REFERENCES oferta_polisy(id_oferta_polisy) ON DELETE CASCADE;
+alter TABLE polisa add CONSTRAINT fk_id_zakup FOREIGN KEY (id_zakup) REFERENCES zakup(id_zakup);
+alter TABLE polisa add CONSTRAINT fk_oferta_polisy FOREIGN KEY (id_oferta_polisy) REFERENCES oferta_polisy(id_oferta_polisy);
+ALTER table obiekt_ubezpieczenia add CONSTRAINT fk_id_polisa FOREIGN KEY (id_polisa) REFERENCES polisa(id_polisa);
+ALTER table warunki_dodatkowe add CONSTRAINT fk_id_polisa FOREIGN KEY (id_polisa) REFERENCES polisa(id_polisa);
+alter table zakup add CONSTRAINT fk_id_agent FOREIGN key (id_agent) REFERENCES agent(id_agent);
+alter table zakup add CONSTRAINT fk_id_klient FOREIGN key (id_klient) REFERENCES klient(id_klient);
