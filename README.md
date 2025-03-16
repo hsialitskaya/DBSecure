@@ -144,6 +144,6 @@ psql -U postgres -c "DROP DATABASE insurance_agency;"
  🆘 **This will delete the insurance_agency database and all its contents. Make sure to back up any important data before executing this command.** 🆘 
 
  ## License
-Memo Game: Animal and Color Matching is licensed under the MIT License. See [LICENSE](https://github.com/hsialitskaya/DBSecure/blob/main/LICENSE) for more information.    
+Insurance Agency Database is licensed under the MIT License. See [LICENSE](https://github.com/hsialitskaya/DBSecure/blob/main/LICENSE) for more information.    
 
 Happy coding and enjoy managing Insurance Agency Database! 🎉
