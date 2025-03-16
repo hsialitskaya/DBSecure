@@ -45,7 +45,7 @@ psql -U postgres
 Create the database for the insurance agency:
 
 ```bash
-CREATE DATABASE insurance_agency
+CREATE DATABASE insurance_agency;
 ```
 
 4️⃣ Set Up the Database Schema
