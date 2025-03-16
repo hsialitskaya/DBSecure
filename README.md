@@ -2,7 +2,7 @@
 
 The Insurance Agency Database is a robust system designed to manage a network of insurance agents and the policies they sell. It stores detailed information about agents, including their personal details, sales performance, and the specific insurance policies they are responsible for. Each policy has important attributes, such as coverage type and premium amount.
 
-<img width="800" alt="Memo Game" src="https://github.com/user-attachments/assets/835a2fde-a7bd-457b-b42b-d11710a13898" />
+<img width="800" alt="Database" src="https://github.com/user-attachments/assets/835a2fde-a7bd-457b-b42b-d11710a13898" />
 
 # 💻 Technologies Used
 
